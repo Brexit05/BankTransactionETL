@@ -2,17 +2,6 @@
 
 This project demonstrates a **data engineering pipeline** I built to simulate real-time bank transactions, store them in a database, and orchestrate batch ETL jobs for downstream analytics. It combines **streaming ingestion** with **batch processing**, showing how raw events can be cleaned, transformed, and exported to cloud storage for analysis.
 
-## Architecture
-
-```mermaid
-flowchart LR
-    A[Kafka Producer] --> B[Kafka Topic]
-    B --> C[Kafka Consumer]
-    C --> D[Postgres (bank_db)]
-    D -->|Airflow DAG| E[Transform & Aggregates]
-    E --> F[S3 Bucket (CSV Export)]
-```
-
 ##  Features
 
 * **Streaming Ingestion**
@@ -73,4 +62,5 @@ My-Kafka/
 
    * Enable `bank_etl_dag` in Airflow UI.
    * Watch transformations run and data exported to S3.
+
 
